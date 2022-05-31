@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 const Header: FC = () => {
   return (
-    <div>
+    <div className='flex'>
       <h1>Recipe App</h1>
     </div>
   )

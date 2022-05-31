@@ -6,5 +6,6 @@ export interface IUser {
 }
 
 export interface IUserProps {
-  user: IUser | null;
+  user?: IUser | null;
+  setUser?: (user: IUser) => void;
 } 

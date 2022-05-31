@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { IUserProps } from "../Interfaces";
+import { Route, Link } from "react-router-dom";
 
 const Navbar: FC<IUserProps> = ({ user }) => {
-
-  console.log(user)
 
   return (
     <>
@@ -14,24 +13,24 @@ const Navbar: FC<IUserProps> = ({ user }) => {
             <img src={user.profileImg} alt="Profile Avatar" className="object-contain w-[25px] h-[25px] rounded-full" />
           </span>
           <span className="space-x-3">
-            <a href="" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
+            <Link to="/user" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
               Profile
-            </a>
-            <a href="" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
+            </Link>
+            <Link to="/" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
               Logout
-            </a>
+            </Link>
           </span>
         </div>
         :
         <div className="flex justify-between mx-3 mb-2">
           <h2>First Time?</h2>
           <span className="space-x-3">
-            <a href="" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
+            <Link to="/login" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
               Login 
-            </a>
-            <a href="" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
+            </Link>
+            <Link to="/signup" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
               Signup
-            </a>
+            </Link>
           </span>
         </div>
       }
