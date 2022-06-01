@@ -19,9 +19,9 @@ const App: FC = () => {
   console.log(user);
 
   return (
-    <main className="flex flex-col h-screen pt-3">
+    <main className="flex flex-col h-screen pt-3 bg-slate-600">
       <Navbar user={user} setUser={setUser} />
-      <hr className="border-1 border-black" />
+      {/* <hr className="border-1 border-black" /> */}
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
