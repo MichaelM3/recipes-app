@@ -1,21 +1,20 @@
-import { FC, MouseEvent, useRef } from "react";
-import { IUser, IUserProps } from "../Interfaces";
-import { users } from "../users";
+import { FC, useRef, FormEvent } from "react";
+import { ILoginProps, IUser } from "../Interfaces";
+import { useNavigate } from "react-router-dom";
 
-const Login: FC<IUserProps> = ({ setUser }) => {
+const Login: FC<ILoginProps> = ({ setUser }) => {
   const userField = useRef<HTMLInputElement>(null)
+  const nav = useNavigate()
 
-  const isUser = (user: IUser): user is IUser => {
-    return (user as IUser) !== undefined
-  }
-
-  const handleLogin = (e: MouseEvent) => {
+  const handleLoginSubmit = async (e: FormEvent) => {
     e.preventDefault()
     if (userField) {
-      const foundUser = users.filter(user => user.username.toLowerCase() === userField.current?.value.toLowerCase())
-      // foundUser ? setUser(foundUser) : console.log("Could not find user")
-      if (isUser(foundUser[0])) {
-        setUser(foundUser[0] as IUser)
+      const res = await fetch(`http://localhost:4000/users`)
+      const data = await res.json()
+      const fetchedUser = data.find((user: IUser) => user.username.toLowerCase() === userField.current?.value.toLowerCase())
+      if (fetchedUser) {
+        setUser(fetchedUser)
+        nav("/")
       } else {
         console.log("No user found")
       }
@@ -23,13 +22,13 @@ const Login: FC<IUserProps> = ({ setUser }) => {
   }
 
   return (
-    <form className="flex items-center justify-center h-2/3 p-3">
+    <form onSubmit={handleLoginSubmit} className="flex items-center justify-center h-2/3 p-3">
       <div className="flex">
         <span className="flex flex-col">
           <input type="text" ref={userField} placeholder="Username..." className="border-[1px] border-black rounded-tl-lg p-1" /> 
           <input type="password" placeholder="Password..." className="border-[1px] border-black border-t-0 rounded-bl-lg p-1" /> 
         </span>
-        <button type="submit" onClick={handleLogin} className="border-[1px] border-black border-l-0 rounded-r-lg bg-slate-400 p-2">
+        <button type="submit" className="border-[1px] border-black border-l-0 rounded-r-lg bg-slate-400 p-2">
           Login
         </button>
       </div>

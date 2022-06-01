@@ -1,11 +1,15 @@
 export interface IUser {
+  id: number;
   username: string;
   password: string;
   email: string
   profileImg?: string;
 }
 
-export interface IUserProps {
-  user?: IUser | null;
-  setUser?: (user: IUser) => void;
+export interface INavbarProps {
+  user: IUser | null;
 } 
+
+export interface ILoginProps {
+  setUser: (user: IUser) => void;
+}
