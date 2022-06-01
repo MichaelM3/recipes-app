@@ -1,8 +1,15 @@
 import { FC } from "react";
-import { IUserProps } from "../Interfaces";
-import { Route, Link } from "react-router-dom";
+import { INavbarProps } from "../Interfaces";
+import { Route, Link, useNavigate } from "react-router-dom";
 
-const Navbar: FC<IUserProps> = ({ user }) => {
+const Navbar: FC<INavbarProps> = ({ user, setUser }) => {
+  const nav = useNavigate()
+
+  const handleLogout = () => {
+    setUser(null)
+    localStorage.removeItem("user")
+    nav("/")
+  }
 
   return (
     <>
@@ -16,7 +23,7 @@ const Navbar: FC<IUserProps> = ({ user }) => {
             <Link to="/user" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
               Profile
             </Link>
-            <Link to="/" className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
+            <Link to="/" onClick={handleLogout} className="border-[1px] border-black rounded-2xl bg-slate-400 p-1">
               Logout
             </Link>
           </span>

@@ -8,6 +8,7 @@ export interface IUser {
 
 export interface INavbarProps {
   user: IUser | null;
+  setUser: (user: IUser | null) => void;
 } 
 
 export interface ILoginProps {
