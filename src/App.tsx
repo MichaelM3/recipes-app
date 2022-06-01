@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react"
+import Homepage from "./components/Homepage"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Login from "./components/Login"
@@ -22,7 +23,7 @@ const App: FC = () => {
       <Navbar user={user} setUser={setUser} />
       <hr className="border-1 border-black" />
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
       </Routes>
     </main>
