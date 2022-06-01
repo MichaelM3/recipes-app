@@ -5,3 +5,5 @@ INSTRUCTIONS
 2. ```yarn install```
 3. ```yarn run dev ``` to start the development server (Will attempt to start at port 3000)
 4. ```yarn run server``` to start the json-server (set to port 4000)
+
+json-server will eventually be replaced with a real backend
