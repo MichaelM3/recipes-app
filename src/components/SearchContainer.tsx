@@ -19,7 +19,7 @@ const SearchContainer: FC<ISearchContainerProps> = ({ setRecipes }) => {
   return (
     <div className='flex flex-col items-center justify-center'>
       <form onSubmit={fetchRecipes}>
-        <input type="text" ref={ingredientField} placeholder='Enter an ingredient...' className='p-2' />
+        <input type="text" ref={ingredientField} placeholder='Enter an ingredient...' className='p-2 focus:outline-none' />
         <button type='submit' className='bg-slate-300 h-full p-2'>Search</button>
       </form>
     </div>

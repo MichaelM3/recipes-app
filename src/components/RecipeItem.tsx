@@ -3,9 +3,9 @@ import { IRecipeItemProps } from "../Interfaces";
 
 const RecipeItem: FC<IRecipeItemProps> = ({ recipe: { title, image } }) => {
   return (
-    <div className="flex flex-col items-center justify-center bg-white border-[1px] border-black border-r-0 h-full">
-      <h2>{title}</h2> 
-      <img src={image} alt="Food" className="object-contain w-[100px] h-[100px]" />
+    <div className="flex flex-col flex-wrap w-[250px] items-center text-center border-[1px] boreder-black p-3">
+      <h3>{title}</h3> 
+      <img src={image} alt="Food" className="object-cover w-[200px] h-[200px] rounded-full" />
     </div>
   )
 
