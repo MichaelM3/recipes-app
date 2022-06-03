@@ -6,10 +6,17 @@ export interface IUser {
   profileImg?: string;
 }
 
-export interface IRecipe {
+export interface IRecipePreview {
   id: number;
   title: string;
   image: string;
+}
+
+export interface IFullRecipe {
+  id: number;
+  title: string;
+  image: string;
+  summary: string;
 }
 
 export interface INavbarProps {
@@ -22,13 +29,13 @@ export interface ILoginProps {
 }
 
 export interface IRecipeContainerProps {
-  recipes: IRecipe[];
+  recipes: IRecipePreview[];
 }
 
 export interface IRecipeItemProps {
-  recipe: IRecipe;
+  recipe: IRecipePreview;
 }
 
 export interface ISearchContainerProps {
-  setRecipes: (recipes: IRecipe[]) => void;
+  setRecipes: (recipes: IRecipePreview[]) => void;
 }

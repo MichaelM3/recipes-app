@@ -3,6 +3,7 @@ import Homepage from "./components/Homepage"
 import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Login from "./components/Login"
+import RecipeProfile from "./components/RecipeProfile"
 import { IUser } from "./Interfaces/index"
 import { Routes, Route } from "react-router-dom"
 
@@ -25,6 +26,7 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/recipes/:id" element={<RecipeProfile />} />
       </Routes>
     </main>
   )
