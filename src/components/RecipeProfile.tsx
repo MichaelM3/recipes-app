@@ -19,10 +19,10 @@ const RecipeProfile: FC = () => {
   }, [])
 
   return (
-    <div>
-      <h1 className="text-white">{recipe?.title}</h1>
+    <div className="flex flex-col items-center space-y-5">
+      <h1 className="text-white text-3xl font-bold">{recipe?.title}</h1>
       <img src={recipe?.image} alt="Food" />
-      <p className="text-white">{recipe?.summary}</p>
+      <div className="text-white w-1/2">{recipe?.summary.replace( /(<([^>]+)>)/ig, "")}</div>
     </div>
   )
 }
