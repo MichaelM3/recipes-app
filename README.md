@@ -7,3 +7,6 @@ INSTRUCTIONS
 4. ```yarn run server``` to start the json-server (set to port 4000)
 
 json-server will eventually be replaced with a real backend
+-- REQUIRES A SPOONACULAR API KEY, AND A .ENV FILE FOR THE API KEY
+api key must be pre-pended with ```VITE``` to work.
+example: ```VITE_API_KEY="some key here"```
