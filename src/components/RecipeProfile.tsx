@@ -18,12 +18,11 @@ const RecipeProfile: FC = () => {
     fetchRecipe(location.state as number)
   }, [])
 
-  console.log(recipe);
-  
-
   return (
     <div>
-      
+      <h1 className="text-white">{recipe?.title}</h1>
+      <img src={recipe?.image} alt="Food" />
+      <p className="text-white">{recipe?.summary}</p>
     </div>
   )
 }
