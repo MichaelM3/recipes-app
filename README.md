@@ -1,6 +1,7 @@
-RECIPE APP WRITTEN IN TYPESCRIPT REACT TO ALLOW USERS TO LOOK UP RECIPES THAT USE INGREDIENTS SEARCHED AND SAVE THEM TO YOUR PROFILE
+<h1>Recipe App</h1> 
+<h2>Written in Typescript React to allow users to look up recipes that use ingredients searched and save them to your profile.</h2>
 
-INSTRUCTIONS
+<strong>INSTRUCTIONS</strong>
 1. ```cd``` into your workspace folder and ```git clone git@github.com:MichaelM3/recipes-app.git```
 2. ```yarn install```
 3. ```yarn run dev ``` to start the development server (Will attempt to start at port 3000)
