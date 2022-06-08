@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { INavbarProps } from "../Interfaces";
-import { Route, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar: FC<INavbarProps> = ({ user, setUser }) => {
   const nav = useNavigate()
@@ -19,6 +19,7 @@ const Navbar: FC<INavbarProps> = ({ user, setUser }) => {
             <h2 className="text-white">{user.username}</h2>
             <img src={user.profileImg} alt="Profile Avatar" className="object-contain w-[25px] h-[25px] rounded-full" />
           </span>
+          <Link to="/" className="text-white bg-slate-400 rounded-lg p-1">Home</Link>
           <span className="space-x-3">
             <Link to={`/users/${user.id}`} className="rounded-2xl bg-slate-400 p-1 text-white">
               Profile
