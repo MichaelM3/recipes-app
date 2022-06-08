@@ -17,6 +17,7 @@ export interface IFullRecipe {
   title: string;
   image: string;
   summary: string;
+  ingredients: [];
 }
 
 export interface INavbarProps {
