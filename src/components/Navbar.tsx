@@ -14,7 +14,7 @@ const Navbar: FC<INavbarProps> = ({ user, setUser }) => {
   return (
     <>
       { user ?
-        <div className="flex justify-between mx-3 pb-2">
+        <div className="flex justify-between mx-3 pb-2 border-b-white border-b-[1px]">
           <span className="flex space-x-3">
             <h2 className="text-white">{user.username}</h2>
             <img src={user.profileImg} alt="Profile Avatar" className="object-contain w-[25px] h-[25px] rounded-full" />

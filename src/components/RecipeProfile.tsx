@@ -24,17 +24,15 @@ const RecipeProfile: FC = () => {
   console.log(recipe);
   
   return (
-    <div className="flex items-start justify-around h-full mt-9">
-      <div className="w-1/4">
-        <h1 className="text-white text-3xl font-bold">{recipe?.title}</h1>
-        <hr />
+    <div className="flex items-start justify-around h-full">
+      <div className="w-1/3 h-full border-r-white border-r-2">
+        <h1 className="text-white text-3xl font-bold underline">{recipe?.title}</h1>
         <p className="text-white">{recipe?.summary.replace( /(<([^>]+)>)/ig, "")}</p>
       </div>
       <img src={recipe?.image} alt="Food" />
-      <div>
-        <h2 className="text-white text-3xl">Ingredients</h2>
+      <div className="w-1/3 h-full border-l-white border-l-2 pl-6">
+        <h2 className="text-white text-3xl underline">Ingredients</h2>
         <ul className="list-disc space-y-4">
-          <hr />
           {displayIngredients}
         </ul>
       </div>
