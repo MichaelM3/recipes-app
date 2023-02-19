@@ -1,6 +1,5 @@
-import { FC } from 'react'
 
-const Header: FC = () => {
+const Header = () => {
   return (
     <div className='flex h-1/4'>
       <h1 className='text-4xl text-white'>Recipe App</h1>

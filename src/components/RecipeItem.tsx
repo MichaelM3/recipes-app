@@ -1,8 +1,10 @@
-import { FC } from "react";
 import { Link } from "react-router-dom";
-import { IRecipeItemProps } from "../Interfaces";
 
-const RecipeItem: FC<IRecipeItemProps> = ({ recipe: { id, title, image } }) => {
+interface Props {
+  recipe: IRecipePreview;
+}
+
+const RecipeItem = ({ recipe: { id, title, image } }: Props) => {
   return (
     <Link
       to={`/recipes/${id}`} state={id} 

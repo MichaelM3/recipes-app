@@ -1,10 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IFullRecipe } from "../Interfaces";
 
 const API_KEY = import.meta.env.VITE_API_KEY
 
-const RecipeProfile: FC = () => {
+const RecipeProfile = () => {
   const [recipe, setRecipe] = useState<IFullRecipe | null>(null)
   const location = useLocation()
 

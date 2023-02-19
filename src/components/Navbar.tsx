@@ -1,8 +1,11 @@
-import { FC } from "react";
-import { INavbarProps } from "../Interfaces";
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar: FC<INavbarProps> = ({ user, setUser }) => {
+interface Props {
+  user: IUser | null;
+  setUser: (user: IUser | null) => void;
+} 
+
+const Navbar = ({ user, setUser }: Props) => {
   const nav = useNavigate()
 
   const handleLogout = () => {

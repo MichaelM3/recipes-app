@@ -1,10 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IRecipePreview } from "../Interfaces";
 import Header from "./Header";
 import SearchContainer from "./SearchContainer";
 import RecipeContainer from "./RecipeContainer";
 
-const Homepage: FC = () => {
+const Homepage = () => {
 
   const [recipes, setRecipes] = useState<IRecipePreview[]>([])
 
