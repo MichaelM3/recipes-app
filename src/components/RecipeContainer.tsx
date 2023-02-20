@@ -1,10 +1,13 @@
-import { FC } from "react";
-import { IRecipePreview, IRecipeContainerProps } from "../Interfaces";
+import { IRecipePreview } from "../Interfaces";
 import RecipeItem from "./RecipeItem";
 
-const RecipeContainer: FC<IRecipeContainerProps> = ({ recipes }) => {
+interface Props {
+  recipes: IRecipePreview[];
+}
 
-  const displayRecipes = recipes.map((recipe: IRecipePreview) => <RecipeItem key={recipe.id} recipe={recipe} />)
+const RecipeContainer = ({ recipes }: Props) => {
+
+  const displayRecipes = recipes.map((recipe: RecipePreview) => <RecipeItem key={recipe.id} recipe={recipe} />)
   
   return (
     <div className="flex flex-wrap justify-center bg-white rounded-xl mt-3 w-3/4">

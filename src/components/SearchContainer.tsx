@@ -1,10 +1,14 @@
-import { FC, FormEvent, useRef } from 'react'
+import { FormEvent, useRef } from 'react'
 import { ISearchContainerProps } from '../Interfaces'
+
+interface Props {
+  setRecipes: (recipes: IRecipePreview[]) => void;
+}
 
 const API_KEY = import.meta.env.VITE_API_KEY
 const URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=`
 
-const SearchContainer: FC<ISearchContainerProps> = ({ setRecipes }) => {
+const SearchContainer = ({ setRecipes }: Props) => {
   const ingredientField = useRef<HTMLInputElement>(null)
 
   const fetchRecipes = async (e: FormEvent) => {
