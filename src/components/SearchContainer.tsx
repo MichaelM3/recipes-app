@@ -1,5 +1,5 @@
 import { FormEvent, useRef } from 'react'
-import { ISearchContainerProps } from '../Interfaces'
+import { IRecipePreview } from '../Interfaces'
 
 interface Props {
   setRecipes: (recipes: IRecipePreview[]) => void;
