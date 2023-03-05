@@ -41,9 +41,24 @@ const Register = ({ setUser }: Props) => {
         <form onSubmit={handleRegisterSubmit} className="flex items-center justify-center h-2/3 p-3">
             <div className="flex">
                 <span className="flex flex-col">
-                    <input type="text" placeholder="Username..." className="border-[1px] border-black rounded-tl-lg p-1" />
-                    <input type="text" placeholder="Email.." className="border-[1px] border-black border-t-0 rounded-bl-lg p-1" />
-                    <input type="password" placeholder="Password..." className="border-[1px] border-black border-t-0 rounded-bl-lg p-1" />
+                    <input
+                        type="text"
+                        placeholder="Username..."
+                        className="border-[1px] border-black rounded-tl-lg p-1"
+                        onChange={(e) => setRegisterField({ ...registerField, username: e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Email.."
+                        className="border-[1px] border-black border-t-0 rounded-bl-lg p-1"
+                        onChange={(e) => setRegisterField({ ...registerField, email: e.target.value })}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password..."
+                        className="border-[1px] border-black border-t-0 rounded-bl-lg p-1"
+                        onChange={(e) => setRegisterField({ ...registerField, password: e.target.value })}
+                    />
                 </span>
                 <button type="submit" className="border-[1px] border-black border-l-0 rounded-r-lg bg-slate-400 p-2">
                     Login

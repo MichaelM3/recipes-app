@@ -40,7 +40,7 @@ const Navbar = ({ user, setUser }: Props) => {
             <Link to="/login" className="rounded-2xl bg-slate-400 p-1 text-white">
               Login 
             </Link>
-            <Link to="/signup" className="rounded-2xl bg-slate-400 p-1 text-white">
+            <Link to="/register" className="rounded-2xl bg-slate-400 p-1 text-white">
               Signup
             </Link>
           </span>
