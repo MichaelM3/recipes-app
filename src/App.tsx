@@ -1,13 +1,13 @@
-import { FC, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Homepage from "./components/Homepage"
-import Header from "./components/Header"
 import Navbar from "./components/Navbar"
 import Login from "./components/Login"
+import Register from "./components/Register"
 import RecipeProfile from "./components/RecipeProfile"
 import { IUser } from "./Interfaces/index"
 import { Routes, Route } from "react-router-dom"
 
-const App: FC = () => {
+const App = () => {
   const [user, setUser] = useState<IUser | null>(null)
 
   useEffect(() => {
@@ -26,6 +26,7 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/register" element={<Register setUser={setUser} />}
         <Route path="/recipes/:id" element={<RecipeProfile />} />
       </Routes>
     </main>
