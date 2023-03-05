@@ -2,32 +2,33 @@ import { FormEvent, useRef } from 'react'
 import { ISearchContainerProps } from '../Interfaces'
 
 interface Props {
-  setRecipes: (recipes: IRecipePreview[]) => void;
+    setRecipes: (recipes: IRecipePreview[]) => void;
 }
 
-const API_KEY = import.meta.env.VITE_API_KEY
-const URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=`
+// const API_KEY = import.meta.env.VITE_API_KEY
+// const URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=`
 
 const SearchContainer = ({ setRecipes }: Props) => {
-  const ingredientField = useRef<HTMLInputElement>(null)
+    const ingredientField = useRef<HTMLInputElement>(null)
 
-  const fetchRecipes = async (e: FormEvent) => {
-    e.preventDefault()
-    if (ingredientField.current) {
-      const res = await fetch(URL+ingredientField.current.value)
-      const { results } = await res.json()
-      setRecipes(results)
-    } 
-  }
+    const fetchRecipes = async (e: FormEvent) => {
+        e.preventDefault()
+        if (ingredientField.current) {
+            const res = await fetch(`http://localhost:8000/search?ingredient=${ingredientField.current.value}`)
+            const results = await res.json()
+            console.log(results)
+            // setRecipes(results)
+        }
+    }
 
-  return (
-    <div className='flex flex-col items-center justify-center'>
-      <form onSubmit={fetchRecipes}>
-        <input type="text" ref={ingredientField} placeholder='Enter an ingredient...' className='p-2 focus:outline-none' />
-        <button type='submit' className='bg-slate-300 h-full p-2'>Search</button>
-      </form>
-    </div>
-  )
+    return (
+        <div className='flex flex-col items-center justify-center'>
+            <form onSubmit={fetchRecipes}>
+                <input type="text" ref={ingredientField} placeholder='Enter an ingredient...' className='p-2 focus:outline-none' />
+                <button type='submit' className='bg-slate-300 h-full p-2'>Search</button>
+            </form>
+        </div>
+    )
 }
 
 export default SearchContainer;
