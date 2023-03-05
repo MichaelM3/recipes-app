@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { IRecipePreview } from "../Interfaces";
 import Header from "./Header";
 import SearchContainer from "./SearchContainer";

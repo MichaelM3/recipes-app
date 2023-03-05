@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { IRecipePreview } from "../Interfaces/index"
 
 interface Props {
   recipe: IRecipePreview;
