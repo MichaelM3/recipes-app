@@ -1,5 +1,5 @@
 import { FormEvent, useRef } from 'react'
-import { ISearchContainerProps } from '../Interfaces'
+import { IRecipePreview } from '../Interfaces/index'
 
 interface Props {
     setRecipes: (recipes: IRecipePreview[]) => void;
@@ -15,9 +15,8 @@ const SearchContainer = ({ setRecipes }: Props) => {
         e.preventDefault()
         if (ingredientField.current) {
             const res = await fetch(`http://localhost:8000/search?ingredient=${ingredientField.current.value}`)
-            const results = await res.json()
-            console.log(results)
-            // setRecipes(results)
+            const { results } = await res.json()
+            setRecipes(results)
         }
     }
 

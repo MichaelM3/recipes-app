@@ -3,7 +3,7 @@ export interface IUser {
   username: string;
   password: string;
   email: string
-  profileImg?: string;
+  image?: string;
 }
 
 export interface IRecipePreview {
