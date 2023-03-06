@@ -1,12 +1,9 @@
-import { useRef, FormEvent } from "react";
-import { IUser } from "../Interfaces";
+import { useRef, FormEvent, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../App";
 
-interface Props {
-    setUser: (user: IUser) => void;
-}
-
-const Login = ({ setUser }: Props) => {
+const Login = () => {
+    const { user, setUser } = useContext(UserContext)
     const userField = useRef<HTMLInputElement>(null)
     const passwordField = useRef<HTMLInputElement>(null)
     const nav = useNavigate()

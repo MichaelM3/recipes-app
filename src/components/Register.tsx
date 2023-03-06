@@ -1,13 +1,9 @@
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { IUser } from '../Interfaces';
+import { UserContext } from '../App';
 
-interface Props {
-    setUser: (user: IUser) => void;
-}
-
-const Register = ({ setUser }: Props) => {
-
+const Register = () => {
+    const { user, setUser } = useContext(UserContext)
     const [registerField, setRegisterField] = useState({
         username: "",
         password: "",

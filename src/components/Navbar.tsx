@@ -1,13 +1,10 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { IUser } from "../Interfaces/index"
+import { UserContext } from "../App";
 
-interface Props {
-  user: IUser | null;
-  setUser: (user: IUser | null) => void;
-} 
-
-const Navbar = ({ user, setUser }: Props) => {
+const Navbar = () => {
   const nav = useNavigate()
+  const { user, setUser } = useContext(UserContext)
 
   const handleLogout = () => {
     setUser(null)
