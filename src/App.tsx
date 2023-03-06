@@ -32,7 +32,7 @@ const App = () => {
                 {/* <hr className="border-1 border-black" /> */}
                 <Routes>
                     <Route path="/" element={<Homepage />} />
-                    <Route path="/profile" element={<UserProfile />} />
+                    <Route path="/profile/:username" element={<UserProfile />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/recipes/:id" element={<RecipeProfile />} />
